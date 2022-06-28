@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBtest", "DBtest\DBtest.csproj", "{215BF2BF-503B-4AEB-AFB1-89940041B414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDBAccess", "CDBAccess\CDBAccess.csproj", "{0E391171-A637-4829-A442-A2F8282B4233}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{215BF2BF-503B-4AEB-AFB1-89940041B414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{215BF2BF-503B-4AEB-AFB1-89940041B414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{215BF2BF-503B-4AEB-AFB1-89940041B414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{215BF2BF-503B-4AEB-AFB1-89940041B414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E391171-A637-4829-A442-A2F8282B4233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E391171-A637-4829-A442-A2F8282B4233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E391171-A637-4829-A442-A2F8282B4233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E391171-A637-4829-A442-A2F8282B4233}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F87D36A9-C3C3-4133-875C-5DB2A0DF6232}
+	EndGlobalSection
+EndGlobal
