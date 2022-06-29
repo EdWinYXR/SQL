@@ -37,4 +37,9 @@ namespace DBBaseClass
         public abstract int DoNonQuery(List<string> m_sqlstrList);
         public abstract DataSet DOQueryPro(string strProcName, object ob);
     }
+
+    public class CDBAccessRun
+    {
+
+    }
 }

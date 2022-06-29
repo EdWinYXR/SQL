@@ -14,9 +14,13 @@ namespace Net
         WARN_LOG_LEVEL,
         ERROR_LOG_LEVEL
     }
-    public class CDBLog
+    internal class CDBLog
     {
-        private static CDBLog m_instance;
+        public CDBLog()
+        {
+            Init();
+        }
+        public static CDBLog Instance = new Lazy<CDBLog>(() => new CDBLog()).Value;
 
         private object m_syncObject = new object();
         private string m_filename;
@@ -25,18 +29,6 @@ namespace Net
         private int m_Index = 1;
         private string m_BaseName;
         private int maxFileCount = 20;
-        static CDBLog()
-        {
-            m_instance = new CDBLog();
-        }
-
-        public static CDBLog Instance
-        {
-            get
-            {
-                return m_instance;
-            }
-        }
 
         public void Init(int retainTime = 7)
         {

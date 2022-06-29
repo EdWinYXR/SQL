@@ -14,7 +14,7 @@ namespace DBAccess
         public SQLServerAccess(DBType type, string conName)
             : base(type, conName)
         {
-            CDBLog.Instance.Init();
+           //CDBLog.Instance.Init();
         }
 
         public void Dispose()

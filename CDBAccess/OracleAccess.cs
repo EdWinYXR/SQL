@@ -8,13 +8,13 @@ using System.Diagnostics;
 
 namespace DBAccess
 {
-    public class OracleAccess : CDBAccess, IDisposable
+    public  class OracleAccess : CDBAccess, IDisposable
     {
         OracleConnection conn = null;
         public OracleAccess(DBType type, string conName)
         : base(type, conName)
         {
-            CDBLog.Instance.Init();
+            //CDBLog.Instance.Init();
         }
         public void Dispose()
         {
@@ -44,10 +44,6 @@ namespace DBAccess
                 return false;
             }
         }
-        ////数据源
-        //readonly String ConString = "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORCLPDB)));Persist Security Info=True;User ID=ROOT;Password=qwasZX;";
-
-        //private static object obj = new object();//声明锁的类型
 
         public override bool Open()
         {
