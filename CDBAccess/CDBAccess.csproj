@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CDBAccess.cs" />
     <Compile Include="CDBLog.cs" />
+    <Compile Include="DBManager.cs" />
     <Compile Include="MySQLAccess.cs" />
     <Compile Include="OracleAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

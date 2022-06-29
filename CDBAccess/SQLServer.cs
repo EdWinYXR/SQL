@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace DBAccess
 {
-    public sealed class SQLServerAccess : CDBAccess, IDisposable
+    internal sealed class SQLServerAccess : CDBAccess, IDisposable
     {
         private SqlConnection m_Connection;
         public SQLServerAccess(DBType type, string conName)

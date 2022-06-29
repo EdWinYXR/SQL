@@ -8,9 +8,11 @@ using System.Diagnostics;
 
 namespace DBAccess
 {
-    public  class OracleAccess : CDBAccess, IDisposable
+    internal sealed class OracleAccess : CDBAccess, IDisposable
     {
-        OracleConnection conn = null;
+        private OracleConnection conn = null;
+
+       //[Obsolete("不允许在外部实例化",true)]
         public OracleAccess(DBType type, string conName)
         : base(type, conName)
         {
