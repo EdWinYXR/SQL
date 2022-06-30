@@ -12,7 +12,7 @@ namespace DBAccess
     {
         private OracleConnection conn = null;
 
-       //[Obsolete("不允许在外部实例化",true)]
+        //[Obsolete("不允许外部实例化", false)]
         public OracleAccess(DBType type, string conName)
         : base(type, conName)
         {

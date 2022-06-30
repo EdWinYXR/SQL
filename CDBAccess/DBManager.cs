@@ -12,48 +12,47 @@ using DBBaseClass;
     创建时间：2022/6/29 15:38:17
     主要用途：初始化调用DB
     更改记录：
-                    时间：              内容：
+       时间：2022/06/30      内容：实现单例化，在程序开始时初始化DBManager的init
 */
-namespace DBManager
+namespace DBClient
 {
-    internal  class DBInit
+    public  class CDBClient
     {
-        public string _server { get; set; }
-        public string _port { get; set; }
-        public string _dataBase { get; set; }
-        public string _user { get; set; }
-        public string _pwd { get; set; }
-        public DBType _dBType { get; set; }
-        public string _conName { get; set; }
-    }
-    public class CDBManager
-    {
-        public static CDBManager Instance = new Lazy<CDBManager>(() => new CDBManager()).Value;
+        public static CDBClient Instance = new Lazy<CDBClient>(() => new CDBClient()).Value;
 
-        private  Dictionary<string,CDBAccess> _DBTypeAccess = new Dictionary<string,CDBAccess>();
-
-        private DBInit dBInit = new DBInit();
-        public bool Init()
+        public  Dictionary<string,CDBAccess> _DBTypeAccess = new Dictionary<string,CDBAccess>();
+        /// <summary>
+        /// 初始换个人连接
+        /// </summary>
+        /// <param name="dBType">数据库类型</param>
+        /// <param name="conName">连接名称</param>
+        /// <param name="server">IP</param>
+        /// <param name="port">端口号</param>
+        /// <param name="dataBase">数据库名称/SID</param>
+        /// <param name="username">用户名称</param>
+        /// <param name="password">用户密码</param>
+        /// <returns></returns>
+        public bool Init(DBType dBType,string conName,string server,int port, string dataBase, string username,string password)
         {
             CDBAccess access;
-            switch (dBInit._dBType)
+            switch (dBType)
             {
                 case DBType.MySQL:
-                    access = new MySQLAccess(DBType.MySQL, dBInit. _conName);
+                    access = new MySQLAccess(DBType.MySQL, conName);
                     break;
                 case DBType.SQLServer:
-                    access = new SQLServerAccess(DBType.SQLServer, dBInit._conName);
+                    access = new SQLServerAccess(DBType.SQLServer,conName);
                     break;
                 case DBType.Oracle:
-                    access = new OracleAccess(DBType.Oracle, dBInit._conName);
+                    access = new OracleAccess(DBType.Oracle, conName);
                     break;
                 default:
                     return false;
             }
-            bool bo = access.Init(dBInit._server, dBInit._port, dBInit._dataBase, dBInit._user, dBInit._pwd);
+            bool bo = access.Init(server, port.ToString(), dataBase, username, password);
             if (bo)
             {
-                _DBTypeAccess.Add(dBInit._conName, access);
+                _DBTypeAccess.Add(conName, access);
                 return true;
             }
             return false;

@@ -13,6 +13,7 @@ namespace DBAccess
         //public MySQLAccess Instance = new Lazy<MySQLAccess>(() => new MySQLAccess()).Value;
 
         private MySqlConnection conn;
+        //[Obsolete("不允许外部实例化", true)]
         public MySQLAccess(DBType type, string conName)
         : base(type, conName)
         {
