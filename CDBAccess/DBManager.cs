@@ -20,7 +20,7 @@ namespace DBClient
     {
         public static CDBClient Instance = new Lazy<CDBClient>(() => new CDBClient()).Value;
 
-        public  Dictionary<string,CDBAccess> _DBTypeAccess = new Dictionary<string,CDBAccess>();
+        private  Dictionary<string,CDBAccess> _DBTypeAccess = new Dictionary<string,CDBAccess>();
         /// <summary>
         /// 初始换个人连接
         /// </summary>

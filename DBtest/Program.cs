@@ -13,8 +13,8 @@ namespace DBtest
     {
         static void Main(string[] args)
         {
-            //CDBManager.Instance.Init(DBBaseClass.DBType.Oracle, "orcale", "192.168.3.114", 1521, "ProPerDBSid", "MES", "qwasZX12");
-            //bool bo=   CDBManager.Instance.Open("orcale");
+            CDBClient.Instance.Init(DBBaseClass.DBType.Oracle, "orcale", "192.168.3.114", 1521, "ProPerDBSid", "MES", "qwasZX12");
+            bool bo = CDBClient.Instance.Open("orcale");
         }
     }
 }
