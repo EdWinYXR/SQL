@@ -38,8 +38,4 @@ namespace DBBaseClass
         public abstract DataSet DOQueryPro(string strProcName, object ob);
     }
 
-    public class CDBAccessRun
-    {
-
-    }
 }

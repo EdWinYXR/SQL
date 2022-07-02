@@ -8,9 +8,11 @@ using System.Diagnostics;
 
 namespace DBAccess
 {
-    public sealed class SQLServerAccess : CDBAccess, IDisposable
+
+    internal sealed class SQLServerAccess : CDBAccess, IDisposable
     {
         private SqlConnection m_Connection;
+        //[Obsolete("不允许外部实例化", true)]
         public SQLServerAccess(DBType type, string conName)
             : base(type, conName)
         {

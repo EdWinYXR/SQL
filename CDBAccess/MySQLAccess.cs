@@ -8,13 +8,15 @@ using System.Diagnostics;
 
 namespace DBAccess
 {
-    public  class MySQLAccess: CDBAccess, IDisposable
+    internal sealed class MySQLAccess: CDBAccess, IDisposable
     {
-        MySqlConnection conn;
+        //public MySQLAccess Instance = new Lazy<MySQLAccess>(() => new MySQLAccess()).Value;
+
+        private MySqlConnection conn;
+        //[Obsolete("不允许外部实例化", true)]
         public MySQLAccess(DBType type, string conName)
         : base(type, conName)
         {
-           // CDBLog.Instance.Init();
         }
         public void Dispose()
         {
